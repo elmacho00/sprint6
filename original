@@ -1,0 +1,18 @@
+class libro:
+    nombre = ""
+
+    def consultar(self, nombre):
+        print(self.nombre)
+
+    from io import open
+    consultar = open("pruebas.txt", "r")
+    consultar = open("pruebas.txt", "a")
+
+    if consultar:
+        texto = consultar.read()
+        print(texto)
+        consultar.close()
+        print()
+    else:
+
+        print("Fin")
