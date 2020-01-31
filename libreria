@@ -3,7 +3,13 @@ from libros import Libro
 class Libreria:
     def __init__(self):
         self.libro1 = Libro()
-        self.nombre = input("Introduce Titulo ")
+        self.titulo = input("Introduce Titulo")
+
+    def agregar(self):
+        titulo = open('titulos.txt','a')
+        titulo.write
+        titulo.close()
+        
         
 
     def menu(self):
