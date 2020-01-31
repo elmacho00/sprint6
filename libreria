@@ -3,10 +3,10 @@ from libros import Libro
 class Libreria:
     def __init__(self):
         self.libro1 = Libro()
-        self.titulo=input("Introduce titulo")
         
 
     def agregar(self):
+        self.titulo=input("Introduce titulo")
         titulo = open('titulos.txt','a')
         titulo.write(self.titulo)
         titulo.close()
@@ -31,4 +31,5 @@ class Libreria:
                 pass
             
 libreria1=Libreria() 
-libreria1.menu() 
+libreria1.menu()                         #pass es una palabra reservada que no da errores y sabe que esta bien 
+
