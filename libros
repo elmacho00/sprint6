@@ -1,48 +1,21 @@
-from io import open
-consultar= open ("prueba.txt", "r")
+import os
+class Libro:
+        lib=""
 
-def libro():
-
-    
-
- 
-    correcto=False
-    num=0
-    while(not correcto):
-        try:
-            num = int(input("Elige que deseas hacer:"))
-            correcto=True
-        except ValueError:
-            print('Error, introduce un numero entero')
-     
-    return num
- 
-salir = False
+        def consullibro(self):
+                
+                if os.path.isfile('C:/Users/tomillo/Desktop/spring6/proyectobeta/titulos.txt'):
+                        print('El archivo existe.')
+                        r = open("titulos.txt", "r")
+                        print(r.read())
+                else:
+                        print('El no archivo existe.')
 
 
-opcion = 0
- 
-while not salir:
- 
-    print ("1. consultar")
-    print ("2. agregar")
-    print("3. finalizar")
-     
-    print ("Elige una opcion")
- 
-    opcion = libro()
- 
-    if opcion == 1:
-        consul=consultar.read()
-        print(consul)
-        consultar.close()
-        print()
-    elif opcion == 2:
-        print ("agregar")
-    elif opcion == 3:
-        salir = True
-    else:
-        print ("Introduce un numero entre 1 y 3")
- 
-print ("Fin")
+        def agregarlibros(self):
+                self.lib= input("nombre de libro")
+                l = open("titulos.txt", "a")
+                l.write(self.lib)
+                l.close()
+
 
