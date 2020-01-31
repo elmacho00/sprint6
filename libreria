@@ -1,19 +1,24 @@
-import os
-class Libro:
-        lib=""
+from libros import Libro
 
-        def consullibro(self):
-                
-                if os.path.isfile('C:/Users/tomillo/Desktop/spring6/proyectobeta/titulos.txt'):
-                        print('El archivo existe.')
-                        r = open("titulos.txt", "r")
-                        print(r.read())
-                else:
-                        print('El no archivo existe.')
+class Libreria:
+    def __init__(self):
+        self.libro1 = Libro()
+        self.nombre = input("Introduce Titulo ")
+        
 
+    def menu(self):
 
-        def agregarlibros(self):
-                self.lib= input("nombre de libro")
-                l = open("titulos.txt", "a")
-                l.write(self.lib)
-                l.close()
+        while True:
+            print("[1] Consultar\t[2] Agregar\t[3] Salir")
+            opcion = input("> ")
+
+            if opcion == "1":
+                print("esto seria consultar")
+
+            if opcion == "2":
+                print("esto seria agregar")
+
+            if opcion == "3":
+                nombre = input("Introduce tu nombre\n> ")
+                print("Hasta luego", nombre)
+                break
