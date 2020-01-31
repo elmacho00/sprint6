@@ -3,28 +3,32 @@ from libros import Libro
 class Libreria:
     def __init__(self):
         self.libro1 = Libro()
-        self.titulo = input("Introduce Titulo")
+        self.titulo=input("Introduce titulo")
+        
 
     def agregar(self):
         titulo = open('titulos.txt','a')
-        titulo.write
+        titulo.write(self.titulo)
         titulo.close()
-        
-        
 
     def menu(self):
 
         while True:
-            print("[1] Consultar\t[2] Agregar\t[3] Salir")
+            print("[1] Agregar\t[2] Consultar\t[3] Salir")
             opcion = input("> ")
 
-            if opcion == "1":
-                print("esto seria consultar")
+            if opcion == "1":                  #poner if en todos el rendimiento puede ser mas lento por eso esta bien el if
+                self.agregar()
 
-            if opcion == "2":
-                print("esto seria agregar")
+            elif opcion == "2":
+                self.libro1.consulta()
 
-            if opcion == "3":
+            elif opcion == "3":
                 nombre = input("Introduce tu nombre\n> ")
                 print("Hasta luego", nombre)
                 break
+            else:
+                pass
+            
+libreria1=Libreria() 
+libreria1.menu() 
